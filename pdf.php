@@ -53,13 +53,8 @@ del uno al otro confín.'), 0);
 
 $fpdf->AddPage('L', 'legal');
 
-$fpdf->Image('images/img.jpg', 125, 10, 100, 100);
+$fpdf->Image('images/img.jpg', 150, 35, 50, 50);
 
-$fpdf->ln();
-$fpdf->ln();
-$fpdf->ln();
-$fpdf->ln();
-$fpdf->ln();
 $fpdf->ln();
 $fpdf->ln();
 $fpdf->ln();
@@ -77,5 +72,28 @@ $fpdf->ln();
 $fpdf->ln();
 
 $fpdf->MultiCell(0, 10, utf8_decode('¡Alimenten y propaguen el fuego de Cristo que tienen en ustedes! Lo dijo el Papa Francisco esta mañana al recibir en audiencia en el Vaticano a los jóvenes participantes en el XI Forum Internacional de Jóvenes, que tuvo lugar en Ciampino, a pocos kilómetros de Roma en la Casa “El Carmelo”. Tres días de encuentro organizados por el Dicasterio para los Laicos, la Familia y la Vida con el objetivo de promover la implementación del Sínodo 2018 centrado en el tema: Los jóvenes, la fe y el discernimiento vocacional.'), 0, 'J');
+
+$fpdf->ln();
+
+$fpdf->SetFont('Helvetica', 'B', 16);
+
+$fpdf->Cell(100, 10, 'Autor', 1, 0, 'C', 0);
+$fpdf->Cell(100, 10, 'Libro', 1, 0, 'C', 0);
+$fpdf->Cell(100, 10, utf8_decode('Año'), 1, 0, 'C', 0);
+$fpdf->ln();
+
+$fpdf->SetFont('Helvetica', '', 12);
+
+$fpdf->Cell(100, 10, 'Miguel de Cervantes', 1, 0, 'C', 0);
+$fpdf->Cell(100, 10, 'Quijote de la Mancha', 1, 0, 'C', 0);
+$fpdf->Cell(100, 10, '1605', 1, 0, 'C', 0);
+$fpdf->ln();
+$fpdf->Cell(100, 10, 'Insoportable levedad del ser', 1, 0, 'C', 0);
+$fpdf->Cell(100, 10, 'Milan Kundera', 1, 0, 'C', 0);
+$fpdf->Cell(100, 10, '1984', 1, 0, 'C', 0);
+$fpdf->ln();
+$fpdf->Cell(100, 10, 'Salvifici Doloris', 1, 0, 'C', 0);
+$fpdf->Cell(100, 10, 'Juan Pablo II', 1, 0, 'C', 0);
+$fpdf->Cell(100, 10, '1984', 1, 0, 'C', 0);
 
 $fpdf->Output('', 'DocPDFDWSL2022.pdf');
