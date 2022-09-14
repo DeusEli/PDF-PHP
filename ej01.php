@@ -28,6 +28,31 @@ por su bravura, el Temido,
 en todo mar conocido
 del uno al otro confín.'), 0);
 
-//$fpdf->AddPage()
+$fpdf->AddPage('L', 'legal');
+
+$fpdf->Image('images/img.jpg', 125, 10, 100, 100);
+
+$fpdf->ln();
+$fpdf->ln();
+$fpdf->ln();
+$fpdf->ln();
+$fpdf->ln();
+$fpdf->ln();
+$fpdf->ln();
+$fpdf->ln();
+$fpdf->ln();
+$fpdf->ln();
+$fpdf->ln();
+$fpdf->ln();
+
+$fpdf->SetFont('Times', '', 11);
+
+//No entendí correctamente la indicación de la práctica, en la que solicitaba que este texto fuera sin cortes, por lo que lo he hecho con el método MultiCell para que el texto se aprecie por completo y Cell que creo que es a lo que se refería con lo de "sin cortes".
+$fpdf->Cell(0, 10, utf8_decode('¡Alimenten y propaguen el fuego de Cristo que tienen en ustedes! Lo dijo el Papa Francisco esta mañana al recibir en audiencia en el Vaticano a los jóvenes participantes en el XI Forum Internacional de Jóvenes, que tuvo lugar en Ciampino, a pocos kilómetros de Roma en la Casa “El Carmelo”. Tres días de encuentro organizados por el Dicasterio para los Laicos, la Familia y la Vida con el objetivo de promover la implementación del Sínodo 2018 centrado en el tema: Los jóvenes, la fe y el discernimiento vocacional.'), 0, 'J');
+
+$fpdf->ln();
+$fpdf->ln();
+
+$fpdf->MultiCell(0, 10, utf8_decode('¡Alimenten y propaguen el fuego de Cristo que tienen en ustedes! Lo dijo el Papa Francisco esta mañana al recibir en audiencia en el Vaticano a los jóvenes participantes en el XI Forum Internacional de Jóvenes, que tuvo lugar en Ciampino, a pocos kilómetros de Roma en la Casa “El Carmelo”. Tres días de encuentro organizados por el Dicasterio para los Laicos, la Familia y la Vida con el objetivo de promover la implementación del Sínodo 2018 centrado en el tema: Los jóvenes, la fe y el discernimiento vocacional.'), 0, 'J');
 
 $fpdf->Output('', 'DocPDFDWSL2022.pdf');
