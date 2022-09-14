@@ -1,7 +1,26 @@
 <?php
 include('FPDF/fpdf.php');
 
-$fpdf = new FPDF();
+class PDF extends FPDF
+{
+	function Header()
+	{
+		$this->SetFont('Arial', 'B', 15);
+		$this->SetX(15);
+		$this->Image('./images/logo.jpg', 265, 5, 25, 25);
+		$this->Cell(0, 10, utf8_decode('Elí Adonay Valencia Machado'), 0, 1);
+	}
+
+	function Footer()
+	{
+		$this->SetY(-15);
+		$this->SetFont('Arial', 'I', 8);
+		$this->Cell(0, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'C');
+	}
+}
+
+$fpdf = new PDF();
+$fpdf->AliasNbPages();
 
 // Add a new page
 // Portrait (P) or Landscape (L)
@@ -14,7 +33,11 @@ $fpdf->SetTitle(utf8_decode('2a Práctica Evaluada'));
 
 //$fpdf->Cell(0, 10, 'Hello World!', 0, 1, 'C');
 
-$fpdf->MultiCell(0, 10, utf8_decode('Ola Queso'), 0, 'C');
+// $fpdf->MultiCell(0, 10, utf8_decode('Ola Queso'), 0, 'C');
+
+$fpdf->ln();
+$fpdf->ln();
+$fpdf->ln();
 
 $fpdf->SetFont('Arial', 'I', 12);
 
